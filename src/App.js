@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import RecipeList from './RecipeList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <RecipeList recipes={sampleRecipes} />
   );
 }
+
+const sampleRecipes = [
+  {
+    id: 1,
+    name: 'Plain Chicken',
+    servings: 3,
+    cookTime: '1:45',
+    instructions: "Put salt on Chicken\n Put chicken in oven\n Eat chicken",
+    ingredients: [
+      {
+        id: 1,
+        name: 'Chicken',
+        amount: '2 Pounds'
+      },
+      {
+        id: 2,
+        name: 'Salt',
+        amount: '1 Tbs'
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Plain Pork',
+    servings: 5,
+    cookTime: '0:45',
+    instructions: "Put paprika on Pork\n Put pork in oven\n Eat pork",
+    ingredients: [
+      {
+        id: 1,
+        name: 'Pork',
+        amount: '2 Pounds'
+      },
+      {
+        id: 2,
+        name: 'Paprika',
+        amount: '2 Tbs'
+      }
+    ]
+  }
+] 
 
 export default App;
